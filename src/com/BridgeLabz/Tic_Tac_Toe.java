@@ -11,29 +11,81 @@ public class Tic_Tac_Toe {
             System.out.println();
         }
     }
-    public static void placePiece(char[][] gameBoard,int pos, char letter){
+    public static void placePiece(char[][] gameBoard,int pos, String user){
+        char symbol =' ';
+        if(user.equals("player")){
+            symbol='X';
+        }
+        else
+            symbol='O';
         switch (pos){
-            case 1: gameBoard[0][0]= letter;
+            case 1:
+                if(gameBoard[0][0] == ' ') {
+                    gameBoard[0][0]= symbol;
+                }
+                else
+                    System.out.print("Position is not empty");
                 break;
-            case 2: gameBoard[0][2] = letter;
+            case 2:
+                if(gameBoard[0][2] == ' ') {
+                    gameBoard[0][2]= symbol;
+                }
+                else
+                    System.out.print("Position is not empty");
                 break;
-            case 3: gameBoard[0][4] = letter;
+            case 3:
+                if(gameBoard[0][4] == ' ') {
+                    gameBoard[0][4]= symbol;
+                }
+                else
+                    System.out.print("Position is not empty");
                 break;
-            case 4: gameBoard[2][0] = letter;
+            case 4:
+                if(gameBoard[2][0] == ' ') {
+                    gameBoard[2][0]= symbol;
+                }
+                else
+                    System.out.print("Position is not empty");
                 break;
-            case 5: gameBoard[2][2] = letter;
+            case 5:
+                if(gameBoard[2][2] == ' ') {
+                    gameBoard[2][2]= symbol;
+                }
+                else
+                    System.out.print("Position is not empty");
                 break;
-            case 6: gameBoard[2][4] = letter;
+            case 6:
+                if(gameBoard[2][4] == ' ') {
+                    gameBoard[2][4]= symbol;
+                }
+                else
+                    System.out.print("Position is not empty");
                 break;
-            case 7: gameBoard[4][0] = letter;
+            case 7:
+                if(gameBoard[4][0] == ' ') {
+                    gameBoard[4][0]= symbol;
+                }
+                else
+                    System.out.print("Position is not empty");
                 break;
-            case 8: gameBoard[4][2] = letter;
+            case 8:
+                if(gameBoard[4][2] == ' ') {
+                    gameBoard[4][2]= symbol;
+                }
+                else
+                    System.out.print("Position is not empty");
                 break;
-            case 9: gameBoard[4][4] = letter;
+            case 9:
+                if(gameBoard[4][4] == ' ') {
+                    gameBoard[4][4]= symbol;
+                }
+                else
+                    System.out.print("Position is not empty");
                 break;
         }
         printGameBoard(gameBoard);
     }
+
     public static void main(String args[]) {
         Scanner SC = new Scanner(System.in);
         System.out.println("Welcome to the tic tac toe");
@@ -43,10 +95,9 @@ public class Tic_Tac_Toe {
                 {'-', '+', '-', '+', '-'},
                 {' ', '|', ' ', '|', ' '}};
         printGameBoard(gameBoard);
-        System.out.println("Enter the letter X or o");
-        char letter = SC.next().charAt(0);
         System.out.println("Enter the position between 1 to 9");
         int pos = SC.nextInt();
-        placePiece(gameBoard,pos,letter);
+        String user = SC.nextLine();
+        placePiece(gameBoard,pos,"player");
     }
 }
