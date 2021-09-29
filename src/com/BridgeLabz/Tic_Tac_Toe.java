@@ -98,6 +98,12 @@ public class Tic_Tac_Toe {
         System.out.println("Enter the position between 1 to 9");
         int pos = SC.nextInt();
         String user = SC.nextLine();
-        placePiece(gameBoard,pos,"player");
+        int random = (int) (Math.random()*2);        // to check the toss to win
+        if(random == 0){
+            user = "player";
+        }
+        else
+            user = "CPU";
+        placePiece(gameBoard,pos,user);
     }
 }
